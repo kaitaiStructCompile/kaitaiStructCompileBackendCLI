@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "wheel", "setuptools_scm[toml]>=3.4.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kaitaiStructCompileBackendCLI"
+authors = [{name = "KOLANICH"}]
+description = "CLI backend for Kaitai Struct compiler"
+keywords = ["KaitaiStruct", "compiler", "backend", "binary format", "setuptools", "automation"]
+license = {text = "Unlicense"}
+classifiers = [
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	"Operating System :: OS Independent",
+]
+requires-python = ">=3.4"
+dependencies = ["setuptools"]
+dynamic = ["version"]
+
+[project.readme]
+file = "ReadMe.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://github.com/kaitaiStructCompile/kaitaiStructCompileBackendCLI.git"
+
+[project.entry-points.kaitai_struct_compile]
+CLI = "kaitaiStructCompileBackendCLI:init"
+
+[tool.setuptools]
+zip-safe = true
+include-package-data = true
+py-modules = ["kaitaiStructCompileBackendCLI"]
+license-files = ["UNLICENSE"]
+
+[tool.setuptools_scm]
